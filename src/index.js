@@ -1,6 +1,8 @@
 import { createLibp2p } from 'libp2p'
 import { tcp } from '@libp2p/tcp'
+import { noise } form '@chainsafe/libp2p-noise'
 
 const node = await createLibp2p ({
 	transports: [tcp()]
+	connectionEncrypters: [noise()]
 })
