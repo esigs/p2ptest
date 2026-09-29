@@ -3,8 +3,9 @@ import { createLibp2p } from 'libp2p'
 import { tcp } from '@libp2p/tcp'
 import { noise } from '@chainsafe/libp2p-noise'
 import { yamux } from '@chainsafe/libp2p-yamux'
-import { multiaddr } from 'multiaddr'
+import { multiaddr } from '@multiformats/multiaddr'
 import { ping } from '@libp2p/ping'
+
 
 const main = async () => {
 	const node = await createLibp2p ({
@@ -33,6 +34,7 @@ const main = async () => {
 	if(process.argv.length >= 3) {
 		const ma = multiaddr(process.argv[2])
 		console.log(`pinging remote peer at ${process.argv[2]}`)
+		console.log(`type of ma: ${typeof(ma)}`)
 		const latency = await node.services.ping.ping(ma)
 		console.log(`pinged ${process.argv[2]} in ${latency}`)
 	} else {
