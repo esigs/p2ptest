@@ -6,11 +6,10 @@ import { yamux } from '@chainsafe/libp2p-yamux'
 import { multiaddr } from '@multiformats/multiaddr'
 import { ping } from '@libp2p/ping'
 
-
 const main = async () => {
 	const node = await createLibp2p ({
 		addresses: {
-			listen: ['/ip4/127.0.0.1/tcp/0']
+			listen: ['/ip4/0.0.0.0/tcp/0']
 		},
 		transports: [tcp()],
 		connectionEncrypters: [noise()],
