@@ -30,7 +30,7 @@ const main = async () => {
 	})
 
 
-	if(process.argv.length > 3) {
+	if(process.argv.length >= 3) {
 		const ma = multiaddr(process.argv[2])
 		console.log(`pinging remote peer at ${process.argv[2]}`)
 		const latency = await node.service.ping.ping(ma)
