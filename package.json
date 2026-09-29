@@ -28,6 +28,7 @@
     "test": ""
   },
   "dependencies": {
+    "@libp2p/tcp": "^11.0.28",
     "libp2p": "^3.3.11"
   }
 }
